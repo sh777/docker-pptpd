@@ -19,4 +19,4 @@ RUN echo "pptpd -f" >> /run.sh
 
 EXPOSE 1723
 
-CMD ["bash" "/run.sh"]
+CMD ["bash", "/run.sh"]
