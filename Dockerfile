@@ -15,4 +15,4 @@ RUN echo "ms-dns 8.8.8.8" >> /etc/ppp/pptpd-options
 
 EXPOSE 1723
 
-CMD ["tail -f /var/log/syslog"]
+CMD ["tail -f /etc/ppp/pptpd-options"]
