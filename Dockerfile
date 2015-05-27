@@ -13,6 +13,10 @@ RUN echo "localip 192.168.0.1" >> /etc/pptpd.conf
 RUN echo "remoteip 192.168.0.100-200" >> /etc/pptpd.conf
 RUN echo "ms-dns 8.8.8.8" >> /etc/ppp/pptpd-options
 
+RUN echo "#!/bin/bash" >> /run.sh
+RUN echo "iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE" >> /run.sh
+RUN echo "pptpd -f" >> /run.sh
+
 EXPOSE 1723
 
-CMD ["tail -f /etc/ppp/pptpd-options"]
+CMD ["bash /run.sh"]
