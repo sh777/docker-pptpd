@@ -15,6 +15,4 @@ RUN echo "ms-dns 8.8.8.8" >> /etc/ppp/pptpd-options
 
 EXPOSE 1723
 
-ADD run.sh /run.sh
-
-CMD ["/run.sh"]
+CMD ["/bin/bash"]
